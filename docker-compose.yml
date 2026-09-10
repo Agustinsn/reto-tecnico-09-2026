@@ -3,8 +3,6 @@ services:
     build:
       context: ./api-node
     container_name: matrix-api-node
-    ports:
-      - "3000:3000"
 
   api-go:
     build:
