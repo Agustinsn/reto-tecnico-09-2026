@@ -55,6 +55,14 @@ func newApp() *fiber.App {
 		ErrorHandler: handlers.ErrorHandler,
 	})
 
+	authService := services.NewAuthService(
+		os.Getenv("AUTH_USERNAME"),
+		os.Getenv("AUTH_PASSWORD"),
+		os.Getenv("JWT_SECRET"),
+	)
+	
+	authHandler := handlers.NewAuthHandler(authService)
+
 	app.Use(recover.New())
 	app.Use(requestid.New())
 	app.Use(logger.New())
@@ -62,7 +70,8 @@ func newApp() *fiber.App {
 	api := app.Group("/api/v1")
 
 	api.Get("/health", qrHandler.Health)
-	api.Post("/qr", qrHandler.Calculate)
+	api.Post("/auth/login", authHandler.Login)
+	api.Post("/qr", handlers.JWTMiddleware(authService), qrHandler.Calculate)
 
 	return app
 }
