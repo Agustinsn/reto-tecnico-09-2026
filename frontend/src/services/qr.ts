@@ -1,6 +1,6 @@
 import type { Matrix, QRResponse } from "../types/qr";
 
-const API_URL = "http://localhost:8080";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function calculateQR(matrix: Matrix): Promise<QRResponse> {
   const token = localStorage.getItem("token");
