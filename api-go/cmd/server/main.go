@@ -13,6 +13,7 @@ import (
 	"github.com/gofiber/fiber/v3/middleware/logger"
 	"github.com/gofiber/fiber/v3/middleware/recover"
 	"github.com/gofiber/fiber/v3/middleware/requestid"
+	"github.com/gofiber/fiber/v3/middleware/cors"
 )
 
 const (
@@ -66,6 +67,17 @@ func newApp() *fiber.App {
 	app.Use(recover.New())
 	app.Use(requestid.New())
 	app.Use(logger.New())
+		app.Use(cors.New(cors.Config{
+		AllowOrigins: []string{
+			"http://localhost:5173",
+		},
+		AllowHeaders: []string{
+			"Origin",
+			"Content-Type",
+			"Accept",
+			"Authorization",
+		},
+	}))
 
 	api := app.Group("/api/v1")
 
