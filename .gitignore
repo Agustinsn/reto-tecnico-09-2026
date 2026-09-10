@@ -1,0 +1,16 @@
+api-node/node_modules/
+api-node/dist/
+
+api-go/bin/
+api-go/build/
+api-go/*.exe
+
+api-node/.env
+api-go/.env
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+*.log
