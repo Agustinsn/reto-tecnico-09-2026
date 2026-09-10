@@ -1,0 +1,18 @@
+services:
+  api-node:
+    build:
+      context: ./api-node
+    container_name: matrix-api-node
+    ports:
+      - "3000:3000"
+
+  api-go:
+    build:
+      context: ./api-go
+    container_name: matrix-api-go
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_API_URL: http://api-node:3000
+    depends_on:
+      - api-node
