@@ -70,6 +70,7 @@ func newApp() *fiber.App {
 		app.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
 			"http://localhost:5173",
+			"https://matrix-qr-frontend.onrender.com",
 		},
 		AllowHeaders: []string{
 			"Origin",

@@ -1,0 +1,381 @@
+:root {
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #222;
+  background: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #eef2ff;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 8%);
+  text-align: center;
+}
+
+.login-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.login-card h1 {
+  margin: 0;
+  color: #222;
+  font-size: 24px;
+}
+
+.login-description {
+  margin: 10px 0 28px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.login-card form {
+  text-align: left;
+}
+
+.login-field {
+  margin-bottom: 18px;
+}
+
+.login-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+  color: #222;
+}
+
+.login-field input:focus {
+  border-color: #2563eb;
+}
+
+.login-field input::placeholder {
+  color: #999;
+}
+
+.login-error {
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff0f0;
+  color: #b00020;
+  font-size: 13px;
+  text-align: center;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  margin: 24px 0 0;
+  color: #999;
+  font-size: 12px;
+}
+
+/* =========================
+   CALCULATOR
+   ========================= */
+
+.calculator-page {
+  width: 900px;
+  max-width: calc(100% - 30px);
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.calculator-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.calculator-header p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.calculator-header button {
+  padding: 8px 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background: white;
+  color: #333;
+}
+
+.calculator-header button:hover {
+  background: #eee;
+}
+
+/* =========================
+   INPUT MATRIX
+   ========================= */
+
+.calculator-section {
+  padding: 25px 0;
+}
+
+.calculator-section h2,
+.results h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.matrix-size {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.matrix-size label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.matrix-size input {
+  width: 70px;
+  padding: 7px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  outline: none;
+}
+
+.matrix-size input:focus {
+  border-color: #2563eb;
+}
+
+.input-matrix {
+  border-collapse: separate;
+  border-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.input-matrix input {
+  width: 70px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-matrix input:focus {
+  border-color: #2563eb;
+}
+
+.calculate-button {
+  padding: 9px 16px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+}
+
+.calculate-button:hover:not(:disabled) {
+  background: #222;
+}
+
+.calculate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.calculator-error {
+  margin-top: 15px;
+  color: #b00020;
+}
+
+/* =========================
+   RESULTS
+   ========================= */
+
+.results {
+  padding-top: 25px;
+  border-top: 1px solid #ddd;
+}
+
+.result-block {
+  margin-bottom: 30px;
+}
+
+.result-block h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.simple-matrix {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.simple-matrix td {
+  min-width: 100px;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  text-align: right;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+/* =========================
+   STATISTICS
+   ========================= */
+
+.statistics {
+  margin-top: 25px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.statistics h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.statistics h4 {
+  margin: 18px 0 6px;
+  font-size: 15px;
+}
+
+.statistics p {
+  margin: 5px 0;
+  color: #444;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 600px) {
+  .calculator-page {
+    max-width: calc(100% - 20px);
+  }
+
+  .calculator-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .calculator-header h1 {
+    font-size: 20px;
+  }
+
+  .calculator-header {
+    flex-direction: column;
+  }
+
+  .input-matrix input {
+    width: 55px;
+  }
+
+  .simple-matrix td {
+    min-width: 75px;
+    padding: 7px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .matrix-size {
+    gap: 10px;
+  }
+
+  .input-matrix {
+    border-spacing: 3px;
+  }
+
+  .input-matrix input {
+    width: 50px;
+    padding: 7px 4px;
+  }
+}
